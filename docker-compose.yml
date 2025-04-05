@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  github:
+    build: ./src/github
+    environment:
+      - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_PERSONAL_ACCESS_TOKEN}
+    stdin_open: true # Equivalent to -i in docker run
+    tty: true        # Needed for stdin_open
+    restart: unless-stopped
